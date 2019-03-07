@@ -100,7 +100,7 @@ body {
 }
 .topic:before {
   content: "";
-  background-image: url("/images/icons/right-chevron.svg");
+  background-image: url("../images/icons/right-chevron.svg");
   position: absolute;
   top: 50%;
   width: 32px;
@@ -129,6 +129,10 @@ body {
 .topic_info {
   width: 895px;
   height: 80px;
+}
+
+body{
+  background:pink;
 }
 
 .topic_title, .topic_steps {
