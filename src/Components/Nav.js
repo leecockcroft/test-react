@@ -9,13 +9,13 @@ class Nav extends Component {
   <ul>
         {this.props.items.map((item, index) => (
                
-          <a href={item.url}><li className="topic">
+          <a onClick={this.props.handleClick} key={index} href={item.url}><li key={index} className="topic">
           <div className="topic_thumb_holder">
             <img className="topic_thumb" src={item.img} alt="" />
           </div>
           <div className="topic_info">
             <h4 className="topic_title">{item.cms}</h4>
-            <p className="topic_steps">{item.guide} guide</p>
+            <p className="topic_steps">{item.guide} {item.steps}</p>
           </div>
         </li></a>
         

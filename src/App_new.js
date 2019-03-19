@@ -26,7 +26,7 @@ import myJson from './images/files.json';
 
 
 
-import Content from './Components/Content/Content'
+import Content from './Components/Content'
 
 
 
@@ -35,12 +35,27 @@ class App extends Component {
     super(props);
     this.state={
       
-    
+      logo: logo,
 
 
 
       //front page 
-    
+    items: [{
+          cms: 'Coral',
+          url: 'coral',
+          guide: '1',
+          img: homepageImage,
+          steps: 'guide'
+        },
+        {
+          cms: 'ladbrokes',
+          url: 'ladbrokes',
+          guide: '1',
+          img: homepageImage,
+          steps: 'guide'
+        },
+       
+      ],
 
 
 //CORAL GUIDES 
@@ -174,6 +189,11 @@ ladGuides:[
   
   
 
+  changeBannerImage = (image) => {
+    this.setState({
+      logo: image  
+    })
+  }
  
         
  
@@ -185,18 +205,58 @@ ladGuides:[
     return (
       <BrowserRouter>
     
-        <div className="container">*
-          <Route path={process.env.REACT_APP_ROUTE + "/"}
-            render={
-              () => <Content />        
-            }
+        {/*<div className="container">*/}
+
+          {/*<Route exact path="/" render={ () => }/>*/}
+
+        <Route path="/"
+          render={
+            () => <Content />        
+          }
           
         />
       
-      </div>
-      
+        {/*<Route path="/"
+          render={
+            () => <Nav items={this.state.items}/>        
+          }
+        
+        />
 
-      
+
+          <Route path="/coral" render={ () => <Header logo={geminiBanner}/>}/>
+           <ul>
+            <Route path="/coral" render={ () => <Nav items={this.state.gemGuide}/>}/>
+          </ul>
+          
+               <Route path="/ladbrokes" render={ () => <Header logo={geminiBanner}/>}/>
+           <ul>
+            <Route path="/ladbrokes" render={ () => <Nav items={this.state.ladGuides}/>}/>
+          </ul>
+          
+           <Route path="/dual_links" render={ () => <Header logo={geminiBanner}/>}/>
+           <ul>
+            <Route path="/dual_links" render={ () => <GameCarousel items={this.state.dualLinks}/>}/>
+          </ul>
+
+
+
+
+
+          
+          
+          
+          
+          <Route path="/game_carousel" render={ () => <Header logo={logo} subheading='gameCarousel'/>}/>
+           <ul>
+          
+            <Route path="/game_carousel" render={ () => <GameCarousel items={this.state.gameCarousel}/>}/>
+
+          </ul>
+
+              
+
+    </div>*/}
      </BrowserRouter>
 
 

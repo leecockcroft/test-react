@@ -8,17 +8,17 @@ class GameCarousel extends Component {
     return (
 
  <div>
+
+     {
+      this.props.items.map((item, index) => (
+<div>
     
-    <div className="contents_header">
-      <h2 className="contents_title">Similar To: Game Carousel</h2>
-      <h4 className="contents_topics">&nbsp;</h4>
-    </div>
     <div className="step">
-      <span className="step-num">1</span>
+      <span className="step-num">{index+1}</span>
       <div className="step-left">
         <div className="step-info">
-          <h3 className="step-title">Add Portlet</h3>
-          <p className="step-content">Add > Playtech Banner Portlet</p>
+          <h3 className="step-title">{item.header}</h3>
+          <p className="step-content">{item.subHeader}</p>
         </div>
         <div className="step-extra">
           <h4 className="step-notice-title"></h4>
@@ -29,14 +29,25 @@ class GameCarousel extends Component {
             <div className="step-icon"><i className="fa">&#xf074;</i></div>
             <div className="step-icon"><i className="fa">&#xf0ad;</i></div>
           </div>
+           <div class="step-extra">
+          <h4 class="step-notice-title">{item.extraHeader}</h4>
+          <p class="step-notice-content">{item.extraDescription}</p>
+          <div class="step-icons">
+            <div class="step-icon active"><i class="fa">&#xf071;</i></div>
+            <div class="step-icon"><i class="fa">&#xf0eb;</i></div>
+            <div class="step-icon"><i class="fa">&#xf074;</i></div>
+            <div class="step-icon"><i class="fa">&#xf0ad;</i></div>
+          </div>
+        </div>
         </div>
       </div>
-      <img className="step-img" src="../images/gemini/similar_to_games_carousel/add_games_portlet.jpg" alt="Add Games Portlet"/>
+      <img className="step-img" src={item.imgChange} alt="Add Games Portlet"/>
     </div>
   
-
     </div>
+ ))}
 
+</div>
    
 
    
@@ -46,7 +57,7 @@ class GameCarousel extends Component {
   
 
 
-       );
+  );
   }
 }
 

@@ -12,7 +12,7 @@ class Header extends Component {
           <img className="banner_img" src={this.props.logo} alt=""/>
         </div>
         <div className="contents_header">
-          <h2 className="contents_title">Web Development Guide</h2>
+          <h2 className="contents_title">{this.props.subheading}</h2>
           <h4 className="contents_topics">2 Topics</h4>
       	</div>
       </header>
